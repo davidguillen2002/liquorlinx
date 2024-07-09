@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0">
+             
+    <persistence-unit name="default">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <non-jta-data-source>java:comp/env/jdbc/liquorlinxDS</non-jta-data-source>
+        
+        <!-- OpenXava classes -->
+        <class>org.openxava.session.GalleryImage</class>
+        <class>org.openxava.web.editors.DiscussionComment</class>
+        <class>com.openxava.naviox.model.ConfigurationRecord</class>
+        <class>com.openxava.naviox.model.Folder</class>
+        <class>com.openxava.naviox.model.History</class>
+        <class>com.openxava.naviox.model.Module</class>
+        <class>com.openxava.naviox.model.ModuleRights</class>
+        <class>com.openxava.naviox.model.Organization</class>
+        <class>com.openxava.naviox.model.Role</class>
+        <class>com.openxava.naviox.model.SessionRecord</class>
+        <class>com.openxava.naviox.model.SSORecord</class>
+        <class>com.openxava.naviox.model.User</class>
+
+        <!-- Custom entities -->
+        <class>com.tuempresa.liquorlinx.modelo.Cliente</class>
+        <class>com.tuempresa.liquorlinx.modelo.Producto</class>
+        <class>com.tuempresa.liquorlinx.modelo.Proveedor</class>
+        <class>com.tuempresa.liquorlinx.modelo.Pedido</class>
+        <class>com.tuempresa.liquorlinx.modelo.PedidoProducto</class>
+        <class>com.tuempresa.liquorlinx.modelo.Inventario</class>
+
+        <properties>
+            <property name="javax.persistence.schema-generation.database.action" value="update"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
